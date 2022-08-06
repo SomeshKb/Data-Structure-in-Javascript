@@ -1,4 +1,4 @@
-class StackNode {
+class QueueNode {
     data;
     next = null
 
@@ -8,61 +8,62 @@ class StackNode {
 }
 
 
-class Stack {
+class Queue {
     firstNode = null;
-
+    lastNode = null;
 
     push(data) {
-        if (this.firstNode == null) {
-            this.firstNode = new StackNode(data);
-            return;
+        let newNode = new QueueNode(data);
+
+        if (this.lastNode != null) {
+            this.lastNode.next = newNode;
         }
-        let newNode = new StackNode(data);
-        newNode.next = this.firstNode;
-        this.firstNode = newNode;
+
+        this.lastNode = newNode;
+
+        if (this.firstNode == null) {
+            this.firstNode = this.lastNode;
+        }
     }
 
-
-    pop(){
+    remove() {
         if(this.firstNode==null) {
             return;
         }
 
         let node = this.firstNode.data;
+
         this.firstNode = this.firstNode.next;
 
-        return node;
-    }
-
-
-    peek(){
-        if(this.firstNode==null) {
-            return;
+        if(this.firstNode.next==null){
+            this.lastNode==null;
         }
-        return this.firstNode.data;
+        return node;
     }
 
     traverse() {
         if(this.firstNode==null) {
             return;
         }
-
         let current = this.firstNode;
         console.log(current.data)
         while (current.next){
             console.log(current.next.data)
             current = current.next;
         }
-            
     }
 }
 
-const stack = new Stack();
 
-stack.push(5);
-stack.push(6);
-stack.push(2);
-stack.push(3);
-stack.push(9);
-stack.pop();
-stack.traverse();
+var queue = new Queue();
+
+queue.push(1);
+queue.push(2);
+queue.push(3);
+queue.push(4);
+
+queue.remove();
+
+queue.traverse();
+
+console.log(queue)
