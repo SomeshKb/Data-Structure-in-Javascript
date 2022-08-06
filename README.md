@@ -4,6 +4,7 @@
 
   
 1. #### LinkList
+1. #### Stack
 
 
 
