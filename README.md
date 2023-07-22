@@ -2,9 +2,12 @@
 
 ### List of Content
 
-  
 1. #### LinkList
-1. #### Stack
+2. #### Stack
+3. #### Queue
+4. #### Binary Search
+5. #### Sorting
+6. #### Heap 
 
 
 
