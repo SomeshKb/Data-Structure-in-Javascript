@@ -2,7 +2,7 @@
 
 ### List of Content
 
-1. #### LinkList
+1. #### Linked List
 2. #### Stack
 3. #### Queue
 4. #### Binary Search
